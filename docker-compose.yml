@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  
+  proxy:
+    
+    build: ./ProxyDocker/
+    
+    ports:
+      - 9654:9654
+    
+    depends_on:
+      - server
+    
+    external_links:
+      - server
+
+  server:
+    build: ./ServerDocker/
